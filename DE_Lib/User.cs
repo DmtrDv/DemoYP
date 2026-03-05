@@ -8,7 +8,7 @@ namespace DE_Lib
 {
     public class User
     {
-        public string role { get; set; }
+        public UserRole role { get; set; }
         public string fio { get; set; }
         public string login { get; set; }
         public string password { get; set; }

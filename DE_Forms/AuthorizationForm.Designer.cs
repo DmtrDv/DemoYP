@@ -93,6 +93,7 @@
             this.guest_button.TabIndex = 5;
             this.guest_button.Text = "Гость";
             this.guest_button.UseVisualStyleBackColor = true;
+            this.guest_button.Click += new System.EventHandler(this.guest_button_Click);
             // 
             // AuthorizationForm
             // 

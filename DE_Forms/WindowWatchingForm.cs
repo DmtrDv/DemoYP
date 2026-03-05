@@ -13,9 +13,15 @@ namespace DE_Forms
 {
     public partial class WindowWatchingForm: Form
     {
-        public WindowWatchingForm(string userRole)
+        public WindowWatchingForm(User user)
         {
             InitializeComponent();
+            this.Text = $"Окно просмотра: {user.role}";
+        }
+
+        private void WindowWatchingForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

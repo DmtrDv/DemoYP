@@ -36,7 +36,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "WindowWatchingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Окно просмотра";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowWatchingForm_FormClosing);
             this.ResumeLayout(false);
 
         }

@@ -13,7 +13,8 @@ namespace DE_Forms
 {
     public partial class AuthorizationForm: Form
     {
-        private User user_ = new User();
+        private UserModel model_ = new UserModel();
+      
         public AuthorizationForm()
         {
             InitializeComponent();
@@ -21,18 +22,27 @@ namespace DE_Forms
 
         private void enter_button_Click(object sender, EventArgs e)
         {
-            string userLogin = login_textBox.Text;
-            string userPassword = password_textBox.Text;
-            if (userLogin == user_.login && userPassword == user_.password)
+            string userInputLogin = login_textBox.Text;
+            string userInputPassword = password_textBox.Text;
+            User user = model_.Authorization(userInputLogin, userInputPassword);
+            if (user != null)
             {
-                string userRole = user_.role;
-                WindowWatchingForm windowWatchingForm = new WindowWatchingForm(userRole);
-
+                WindowWatchingForm windowWatchingForm = new WindowWatchingForm(user);
+                windowWatchingForm.Show();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Неверный логин или пароль");
             }
+        }
+
+        private void guest_button_Click(object sender, EventArgs e)
+        {
+            User user = new User() { role = UserRole.Гость, fio = "", login = "", password = "" };
+            WindowWatchingForm windowWatchingForm = new WindowWatchingForm(user);
+            windowWatchingForm.Show();
+            this.Hide();
         }
     }
 }
