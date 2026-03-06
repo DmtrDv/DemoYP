@@ -13,7 +13,6 @@ namespace DE_Forms
 {
     public partial class AuthorizationForm: Form
     {
-        private UserModel model_ = new UserModel();
       
         public AuthorizationForm()
         {
@@ -24,7 +23,12 @@ namespace DE_Forms
         {
             string userInputLogin = login_textBox.Text;
             string userInputPassword = password_textBox.Text;
-            User user = model_.Authorization(userInputLogin, userInputPassword);
+            if (string.IsNullOrEmpty(userInputLogin)|| string.IsNullOrEmpty(userInputPassword))
+            {
+                MessageBox.Show("Введите логин или пароль");
+                return;
+            }
+            User user = Database.Authorization(userInputLogin, userInputPassword);
             if (user != null)
             {
                 WindowWatchingForm windowWatchingForm = new WindowWatchingForm(user);
@@ -39,7 +43,7 @@ namespace DE_Forms
 
         private void guest_button_Click(object sender, EventArgs e)
         {
-            User user = new User() { role = UserRole.Гость, fio = "", login = "", password = "" };
+            User user = new User() { role = "Гость", fio = "", login = "", password = "" };
             WindowWatchingForm windowWatchingForm = new WindowWatchingForm(user);
             windowWatchingForm.Show();
             this.Hide();

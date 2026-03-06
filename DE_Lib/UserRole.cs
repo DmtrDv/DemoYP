@@ -8,9 +8,9 @@ namespace DE_Lib
 {
     public enum UserRole
     {
-        Администратор,
-        Менеджер,
-        Клиент,
-        Гость
+        Admin,
+        Manager,
+        AuthorizationClient,
+        Guest
     }
 }
