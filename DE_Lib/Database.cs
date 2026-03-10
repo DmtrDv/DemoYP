@@ -9,6 +9,9 @@ namespace DE_Lib
 {
     public class Database
     {
+        //
+        //осуществление интеграции программных модулей , с 02,03 по 22,03
+        //
         private static string connectionString = "Server=127.0.0.1; Database=shop;UserId=root;Password=vertrigo;Port=3306;Charset=utf8 ";
 
         public static List<string> GetAllLogins()
@@ -53,6 +56,32 @@ namespace DE_Lib
                     }
                 }
                 return null;
+            }
+        }
+        public static List<Products> GetAllProducts()
+        {
+            List<Products> products = new List<Products>();
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string sql = @"SELECT article, name, unit, price, supplier, manufacturer, category, discount, stock_quantity, description, photo
+                               FROM tovar";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        products.Add(new Products()
+                        {
+                            article = reader.GetString("article"),
+                            name = reader.GetString("name"),
+                            unit = reader.GetString("unit"),
+                            price = reader.GetDouble("price"),
+
+                        });   
+                    }
+                }
+                return products;
             }
         }
     }

@@ -13,15 +13,34 @@ namespace DE_Forms
 {
     public partial class WindowWatchingForm: Form
     {
+        private Products products;
+        private List<Products> allProducts;
+        private List<ProductCard> allCard;
         public WindowWatchingForm(User user)
         {
             InitializeComponent();
-            this.Text = $"Окно просмотра: {user.role}";
+            if (user.role == "Гость")
+            {
+                this.Text = $"Окно просмотра: {user.role}";
+            }
+            else
+            {
+                this.Text = $"Окно просмотра: {user.fio}";
+            }
         }
 
         private void WindowWatchingForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void WindowWatchingForm_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void LoadProduct()
+        {
+            
         }
     }
 }
