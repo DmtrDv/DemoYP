@@ -40,7 +40,7 @@ namespace DE_Forms
                 MessageBox.Show("Неверный логин или пароль");
             }
         }
-
+        
         private void guest_button_Click(object sender, EventArgs e)
         {
             User user = new User() { role = "Гость", fio = "", login = "", password = "" };

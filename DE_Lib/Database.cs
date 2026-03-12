@@ -77,12 +77,18 @@ namespace DE_Lib
                             name = reader.GetString("name"),
                             unit = reader.GetString("unit"),
                             price = reader.GetDouble("price"),
-
-                        });   
+                            supplier = reader.GetString("supplier"),
+                            manufacturer = reader.GetString("manufacturer"),
+                            category = reader.GetString("category"),
+                            discount = reader.GetDouble("discount"),
+                            stockQuantity = reader.GetInt32("stock_quantity"),
+                            description = reader.GetString("description"),
+                            pathPhoto = reader.GetString("photo")
+                        });
                     }
                 }
-                return products;
             }
+            return products;
         }
     }
 }

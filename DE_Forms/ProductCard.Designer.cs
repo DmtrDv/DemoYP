@@ -36,18 +36,21 @@
             this.supplier_label = new System.Windows.Forms.Label();
             this.price_label = new System.Windows.Forms.Label();
             this.unit_label = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.stockQuantity_label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.newPrice_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(4, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(155, 155);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -107,7 +110,7 @@
             this.price_label.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.price_label.Location = new System.Drawing.Point(161, 101);
             this.price_label.Name = "price_label";
-            this.price_label.Size = new System.Drawing.Size(352, 21);
+            this.price_label.Size = new System.Drawing.Size(153, 21);
             this.price_label.TabIndex = 7;
             this.price_label.Text = "Цена:";
             // 
@@ -121,19 +124,19 @@
             this.unit_label.TabIndex = 8;
             this.unit_label.Text = "Единица измерения:";
             // 
-            // label1
+            // stockQuantity_label
             // 
-            this.label1.CausesValidation = false;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(161, 142);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(352, 21);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Количество на складе:";
+            this.stockQuantity_label.CausesValidation = false;
+            this.stockQuantity_label.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.stockQuantity_label.Location = new System.Drawing.Point(161, 142);
+            this.stockQuantity_label.Name = "stockQuantity_label";
+            this.stockQuantity_label.Size = new System.Drawing.Size(352, 21);
+            this.stockQuantity_label.TabIndex = 9;
+            this.stockQuantity_label.Text = "Количество на складе:";
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.discount_label);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Desktop;
@@ -143,13 +146,23 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
+            // newPrice_label
+            // 
+            this.newPrice_label.CausesValidation = false;
+            this.newPrice_label.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.newPrice_label.Location = new System.Drawing.Point(319, 101);
+            this.newPrice_label.Name = "newPrice_label";
+            this.newPrice_label.Size = new System.Drawing.Size(153, 21);
+            this.newPrice_label.TabIndex = 11;
+            // 
             // ProductCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.newPrice_label);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.stockQuantity_label);
             this.Controls.Add(this.unit_label);
             this.Controls.Add(this.price_label);
             this.Controls.Add(this.supplier_label);
@@ -178,7 +191,8 @@
         private System.Windows.Forms.Label supplier_label;
         private System.Windows.Forms.Label price_label;
         private System.Windows.Forms.Label unit_label;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label stockQuantity_label;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label newPrice_label;
     }
 }
