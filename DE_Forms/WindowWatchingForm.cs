@@ -14,6 +14,7 @@ namespace DE_Forms
     public partial class WindowWatchingForm: Form
     {
         private List<Products> allProducts_;
+        private string userRole_;
         public WindowWatchingForm(User user)
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace DE_Forms
                 this.Text = $"Окно просмотра: {user.fio}";
             }
             LoadProduct();
-            findText_toolStripTextBox.TextChanged += findText_toolStripTextBox_TextChanged;
+            userRole_ = user.role;
         }
         private void LoadProduct()
         {
@@ -56,10 +57,6 @@ namespace DE_Forms
                 card.SetProduct(product);
                 MainPanel_flowLayoutPanel.Controls.Add(card);
             }
-        }
-        private void WindowWatchingForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
 
         private void findText_toolStripTextBox_TextChanged(object sender, EventArgs e)
@@ -95,6 +92,24 @@ namespace DE_Forms
                 {product.unit}
             ".ToLower();
             return searchableText;
+        }
+
+        private void WindowWatchingForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+        private bool lowUser()
+        {
+            return userRole_ == "Гость" || userRole_ == "Авторизированный клиент" || userRole_ == null;
+        }
+
+        private void WindowWatchingForm_Load(object sender, EventArgs e)
+        {
+            if (lowUser())
+            {
+                findText_toolStripTextBox.Enabled = false;
+                find_toolStripLabel.Text = "Поиск Вам недоступеyн";
+            }
         }
     }
 }

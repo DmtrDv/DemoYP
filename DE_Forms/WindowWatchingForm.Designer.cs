@@ -42,6 +42,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainPanel_flowLayoutPanel.AutoScroll = true;
+            this.MainPanel_flowLayoutPanel.BackColor = System.Drawing.Color.Chartreuse;
             this.MainPanel_flowLayoutPanel.Location = new System.Drawing.Point(0, 26);
             this.MainPanel_flowLayoutPanel.Name = "MainPanel_flowLayoutPanel";
             this.MainPanel_flowLayoutPanel.Size = new System.Drawing.Size(800, 424);
@@ -84,7 +85,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Окно просмотра";
-            this.FormClosing += WindowWatchingForm_FormClosing;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowWatchingForm_FormClosing);
+            this.Load += new System.EventHandler(this.WindowWatchingForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

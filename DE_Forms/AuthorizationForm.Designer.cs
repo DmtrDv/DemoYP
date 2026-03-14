@@ -75,13 +75,16 @@
             // 
             // enter_button
             // 
+            this.enter_button.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.enter_button.FlatAppearance.BorderColor = System.Drawing.Color.MediumSpringGreen;
+            this.enter_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.enter_button.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.enter_button.Location = new System.Drawing.Point(31, 128);
             this.enter_button.Name = "enter_button";
             this.enter_button.Size = new System.Drawing.Size(108, 37);
             this.enter_button.TabIndex = 4;
             this.enter_button.Text = "Вход";
-            this.enter_button.UseVisualStyleBackColor = true;
+            this.enter_button.UseVisualStyleBackColor = false;
             this.enter_button.Click += new System.EventHandler(this.enter_button_Click);
             // 
             // guest_button

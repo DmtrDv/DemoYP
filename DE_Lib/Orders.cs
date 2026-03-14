@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DE_Lib
 {
-    public class X3X3Orders
+    public class Orders
     {
         [DisplayName("ИД")]
         public int orderId {  get; set; }

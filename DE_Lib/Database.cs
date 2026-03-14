@@ -90,5 +90,13 @@ namespace DE_Lib
             }
             return products;
         }
+       /* public static List<Orders> GetAllOrders()
+        {
+            List <Orders> orders = new List<Orders>();
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+
+            }
+        }*/
     }
 }
